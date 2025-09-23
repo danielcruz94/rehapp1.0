@@ -2,7 +2,7 @@ import Link from "next/link";
 import styles from "./ejercicios.module.css";
 import Image from "next/image";
 
-import { data, type Exercise, type PainType } from "../../../../data";
+import { data, type PainType } from "../../../../data";
 
 interface categoriasProps {
     params: {
@@ -43,9 +43,9 @@ export default async function categorias(props: categoriasProps) {
   
     if (!item) {
         return (
-            <div className="page-container error-container">
+            <div className="pageContainer errorContainer">
                 <h1>Error 404</h1>
-                <p>La zona de dolor con ID "{categorias}" no fue encontrada.</p>
+                <p>La zona de dolor con ID {categorias} no fue encontrada.</p>
                 <Link href="/">Volver al inicio</Link>
             </div>
         );
@@ -58,13 +58,13 @@ export default async function categorias(props: categoriasProps) {
         `
     };
   
-    function shuffleArray<T>(array: T[]): T[] {
-        for (let i = array.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [array[i], array[j]] = [array[j], array[i]]; 
-        }
-        return array;
-    }
+    // function shuffleArray<T>(array: T[]): T[] {
+    //     for (let i = array.length - 1; i > 0; i--) {
+    //         const j = Math.floor(Math.random() * (i + 1));
+    //         [array[i], array[j]] = [array[j], array[i]]; 
+    //     }
+    //     return array;
+    // }
    
   
     const getTextSizeClass = (text: string): string => {
@@ -78,7 +78,7 @@ export default async function categorias(props: categoriasProps) {
             <div className={styles.cardContentWrapper}>
                 <header className={styles.cardHeader}>
                     <div className={styles.headerTitle}>
-                        <img src={item.icon} alt={`${item.name} icon`} />
+                        <Image src={item.icon} alt={`${item.name} icon`} />
                         <h2>{item.name}</h2>
                         <Link href={`/`} className={styles.backHomeButton}>
                             <svg className={styles.iconoFlechaArriba} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="39px" height="39px">
@@ -91,7 +91,7 @@ export default async function categorias(props: categoriasProps) {
                 </header>
         
                 <div className={styles.diagramContainer}>
-                    <img src={item.img} alt={`${item.name} diagram`} />
+                    <Image src={item.img} alt={`${item.name} diagram`} />
                 </div>
         
                 <ul className={styles.exerciseList}>
