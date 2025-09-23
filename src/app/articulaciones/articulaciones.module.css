@@ -1,0 +1,189 @@
+
+
+.selectionPage {
+    padding: 2rem 1.5rem;
+    max-width: 440px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-top: calc(2rem + env(safe-area-inset-top));
+    background-image: url("/img.back./seleccion.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; 
+    min-height: 100dvh;
+    position: relative; /* Agregamos esto */
+  }
+
+  .selectionPage::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8); /* Ajusta la opacidad aquí */
+    z-index: 0;
+  }
+
+  .selectionPage > * {
+    position: relative;
+    z-index: 1;
+  }
+  
+
+  .selectionHeader {
+    display: flex;
+   
+    justify-content: center;
+    align-items: flex-end;
+  }
+  .headerInfo {
+    display: flex;
+
+    gap: 1rem;
+
+  }
+  .headerLogo {
+    width: 40px;
+    height: auto;
+  }
+  .headerInfo h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.1;
+  }
+  .headerInfo .subtitle {
+    font-size: 0.9rem;
+    color: #b0b0b0;
+  }
+
+  .headerName{
+
+    margin-top: 20px;
+  
+  }
+
+
+
+  /* --- Main Content --- */
+.selectionMain h2 {
+ 
+    font-size: clamp(2rem, 8vw, 2.5rem);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 2.5rem;
+  }
+  
+  .painOptionsList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .painOptionItem {
+    display: grid;
+    /* No es necesario cambiar la definición del grid, está bien */
+    grid-template-columns: 1fr auto;
+    row-gap: 0.75rem;
+  }
+  
+  .optionCard {
+    grid-column: 1 / 3;
+    grid-row: 1;
+    display: flex;
+    text-decoration: none;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: #000000;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  }
+  .optionCard:hover {
+    transform: translateY(-5px);
+   
+  }
+  
+  .optionContent {
+    flex-grow: 1;
+    background-color: #8A8A8A;
+    padding: 0.2rem 0.2rem;
+    display: flex;
+    align-items: center;
+  
+    color: #ffffff;
+    font-weight: 700;
+  }
+  
+  /* CAMBIO: La fuente del nombre de la opción también se hace fluida */
+  .optionContent span {
+    font-size: clamp(1.1rem, 4vw, 1.5rem);
+  }
+  
+  .optionIcon {
+    width: 67px;
+    height: 66px;
+    padding-top: 3px;
+    padding-right: 9px;
+    padding-left: 6px;
+    filter: brightness(0) invert(1);
+  }
+  
+  
+  
+  .optionArrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1.5rem;
+  }
+  .optionArrow svg {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .optionDescription {
+    grid-column: 1 / -1; /* Ocupa desde la primera línea de la grilla hasta la última */
+    grid-row: 2;
+    font-size: 0.9rem;
+    margin: 0;
+    padding-right: 5.5rem;
+  
+  }
+  
+  
+  /* --- Estilos para Iconos SVG --- */
+  .iconoFlechaArriba .circulo {
+    fill: #6eff3e;
+  }
+  .iconoFlechaArriba .flecha {
+    stroke: #000000;
+    fill: none;
+  }
+  .iconoFlechaDerecha .linea {
+    stroke: #ffffff;
+    stroke-width: 1.5;
+    fill: none;
+  }
+  
+  .optionContent .articulacion {
+    font-size: 2rem;
+  }
+  
+  .optionContent .articulacion.longText {
+    font-size: 1.7rem;
+  }
+  
+  @media (max-width: 500px) {
+    .optionContent .articulacion {
+      font-size: 1.6rem;
+    }
+    .optionContent .articulacion.longText {
+      font-size: 1.5rem;
+    }
+  }

@@ -1,0 +1,20 @@
+body {
+    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.85) 100%);
+    overscroll-behavior: none; 
+    margin: 0;
+    color: #ffffff; 
+    font-family: 'Poppins', sans-serif; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+
+.homePage {
+cursor: pointer;
+}
