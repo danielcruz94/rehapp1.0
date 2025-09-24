@@ -33,7 +33,7 @@ export default async function categorias(props: categoriasProps) {
         const lowerCaseDifficulty = difficulty.toLowerCase();
         if (lowerCaseDifficulty === 'fácil') return 1;
         if (lowerCaseDifficulty === 'medio') return 2;
-        if (lowerCaseDifficulty === 'difícil') return 3;
+        if (lowerCaseDifficulty === 'difícil'||'dificil') return 3;
         return 1;
     };
       
