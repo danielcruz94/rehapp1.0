@@ -91,7 +91,7 @@ export default async function categorias(props: categoriasProps) {
                 </header>
         
                 <div className={styles.diagramContainer}>
-                    <Image src={item.img} alt={`${item.name} diagram`} width={500} height={500} />
+                    <Image src={item.img} alt={`${item.name} diagram`} width={500} height={290} />
                 </div>
         
                 <ul className={styles.exerciseList}>
