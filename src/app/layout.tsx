@@ -15,6 +15,10 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "rehApp",
   description: "Fisioterapia a tu alcance", 
+  other: {
+    'color-scheme': 'dark', // Sugiere al navegador un esquema de color oscuro
+    'theme-color': '#000000', // Define el color del tema para la barra de estado y otros elementos de UI
+  },
 };
 
 export default function RootLayout({

@@ -78,9 +78,9 @@ export default async function categorias(props: categoriasProps) {
             <div className={styles.cardContentWrapper}>
                 <header className={styles.cardHeader}>
                     <div className={styles.headerTitle}>
-                        <Image src={item.icon} alt={`${item.name} icon`} />
+                        <Image src={item.icon} alt={`${item.name} icon`} width={50} height={50} />
                         <h2>{item.name}</h2>
-                        <Link href={`/`} className={styles.backHomeButton}>
+                        <Link href={`/articulaciones`} className={styles.backHomeButton}>
                             <svg className={styles.iconoFlechaArriba} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="39px" height="39px">
                                 <title>Flecha hacia arriba</title>
                                 <circle className={styles.circulo} cx="12" cy="12" r="12"/>
@@ -91,7 +91,7 @@ export default async function categorias(props: categoriasProps) {
                 </header>
         
                 <div className={styles.diagramContainer}>
-                    <Image src={item.img} alt={`${item.name} diagram`} />
+                    <Image src={item.img} alt={`${item.name} diagram`} width={500} height={500} />
                 </div>
         
                 <ul className={styles.exerciseList}>
