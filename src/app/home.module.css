@@ -16,6 +16,80 @@ body {
 
 
 
+
 .homePage {
 cursor: pointer;
 }
+
+.slogan {
+    font-size: 1.25rem;
+    font-weight: 400; 
+    color: #f0f0f0; 
+    margin: 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    text-decoration: none;
+  }
+  
+
+.buttongreen {
+    background-color: #6eff3e; /* El verde brillante de la imagen */
+    color: #111111; /* El texto del botón es oscuro para mayor contraste */
+    border: none;
+    border-radius: 12px; /* Esquinas bien redondeadas */
+    padding: 7px 24px; /* Relleno generoso para un botón grande */
+    font-size: 1.2rem;
+    font-weight: 700; /* Texto en negrita */
+    cursor: pointer;
+    width: fit-content;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    box-shadow: 0 4px 15px rgba(110, 255, 62, 0.2);
+    margin-top: 15px;
+  }
+  
+ 
+  .buttongreen:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(110, 255, 62, 0.5); 
+  }
+  
+  .imageWrapper {
+    position: relative; 
+    aspect-ratio: 800 / 500; 
+    width: 100%; 
+    max-width: 800px; 
+    margin: 0 auto; 
+  }
+  
+
+.contenedorTexto{
+
+    position: relative;
+    top:120px
+}
+
+.imageLink {
+    text-decoration: none;
+  }
+
+  @media (max-width: 768px) {
+  
+   
+    .imageWrapper {
+        width: 90vw;
+      }
+  
+  
+    .contenedorTexto {
+      top:170px;
+    }
+  
+    
+    .slogan {
+      font-size: 1rem;
+    }
+  
+    .buttongreen {
+      font-size: 1rem;
+      padding: 6px 20px;
+    }
+  }

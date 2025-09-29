@@ -68,8 +68,8 @@ export default async function categorias(props: categoriasProps) {
    
   
     const getTextSizeClass = (text: string): string => {
-        if (text.length > 100) return 'text-extra-small';
-        if (text.length > 80) return 'text-small';
+        if (text.length > 100) return 'textExtraSmall';
+        if (text.length > 80) return 'textSmall';
         return 'text-normal';
     };
   
