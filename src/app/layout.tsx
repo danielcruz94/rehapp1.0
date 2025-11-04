@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-
+import Script from "next/script"; // 👈 Importa Script de Next.js
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,10 +14,10 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "rehApp",
-  description: "Fisioterapia a tu alcance", 
+  description: "Fisioterapia a tu alcance",
   other: {
-    'color-scheme': 'dark', // Sugiere al navegador un esquema de color oscuro
-    'theme-color': '#000000', // Define el color del tema para la barra de estado y otros elementos de UI
+    "color-scheme": "dark",
+    "theme-color": "#000000",
   },
 };
 
@@ -27,10 +27,33 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+    <html lang="es">
+      <head>
+        {/* Google Tag Manager */}
+        <Script id="gtm-script" strategy="afterInteractive">
+          {`
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-KZRZS6JT');
+          `}
+        </Script>
+        {/* End Google Tag Manager */}
+      </head>
+
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        {/* Google Tag Manager (noscript) */}
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-KZRZS6JT"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          ></iframe>
+        </noscript>
+        {/* End Google Tag Manager (noscript) */}
+
         {children}
       </body>
     </html>
