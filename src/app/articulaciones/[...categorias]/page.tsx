@@ -25,8 +25,8 @@ export default async function categorias(props: categoriasProps) {
 
     const LightningIcon = () => (
         <Image src="/iconos/Vector.svg" alt="rayoicon" className="flash"
-        width={20}
-        height={20} />
+        width={15}
+        height={15} />
     );
 
     const getDifficultyLevel = (difficulty: string): number => {

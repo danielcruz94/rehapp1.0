@@ -290,12 +290,13 @@
     border-radius: 50px;
     border: 1px solid    grey;
     width: 95px;
-    justify-content:flex-start;
+    justify-content:space-around;
     align-items: center;
     margin-right: 14px;
     height: 30px;
     padding-left: 3px;
-    padding-right: 3px;
+    padding-right: 5px;
+   
  
 
  
