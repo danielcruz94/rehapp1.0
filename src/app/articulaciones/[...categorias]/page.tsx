@@ -117,7 +117,7 @@ export default async function categorias(props: categoriasProps) {
                
                 <span className={styles.title}>Tus Ejercicios</span>
                      <div className={styles.contenedorDificultad}>
-                        <LightningIcon />
+                        <LightningIcon/>
                         <span style={{    color: "grey"}}>Dificultad</span>
                     </div>
 

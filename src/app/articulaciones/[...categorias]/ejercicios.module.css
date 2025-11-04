@@ -87,6 +87,8 @@
   .exerciseItem {
     position: relative;
     transition: all 0.2s ease-in-out;
+    border: 1px solid #f8fafc;
+    border-radius: 15px;
    
   }
   
@@ -94,8 +96,8 @@
      TARJETAS DE EJERCICIOS
      ============================================== */
   .exerciseItem a {
-    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
-    color: #1f2937;
+    /* background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%); */
+    
     display: flex;
     align-items: center;
     border-radius: 16px;
@@ -175,6 +177,7 @@
     height: 16px;
     animation: energyGlow 2s ease-in-out infinite alternate;
     flex-shrink: 0;
+    background-color: antiquewhite;
     
     
   }
@@ -182,7 +185,7 @@
   /* Nombre del ejercicio */
   .exerciseName {
     font-weight: 600;
-    color: #1f2937;
+    color: white;
     line-height: 1.2; /* Línea más compacta */
     word-wrap: break-word;
     hyphens: auto;
