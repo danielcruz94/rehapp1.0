@@ -58,15 +58,7 @@ export default async function categorias(props: categoriasProps) {
         `
     };
   
-    // function shuffleArray<T>(array: T[]): T[] {
-    //     for (let i = array.length - 1; i > 0; i--) {
-    //         const j = Math.floor(Math.random() * (i + 1));
-    //         [array[i], array[j]] = [array[j], array[i]]; 
-    //     }
-    //     return array;
-    // }
    
-  
     const getTextSizeClass = (text: string): string => {
         if (text.length > 100) return 'textExtraSmall';
         if (text.length > 80) return 'textSmall';
@@ -74,55 +66,102 @@ export default async function categorias(props: categoriasProps) {
     };
   
     return (
-        <div className={styles.exercisePage} style={backgroundStyle}>
-            <div className={styles.cardContentWrapper}>
-                <header className={styles.cardHeader}>
-                    <div className={styles.headerTitle}>
-                        <Image src={item.icon} alt={`${item.name} icon`} width={50} height={50} />
-                        <h2>{item.name}</h2>
-                        <Link href={`/articulaciones`} className={styles.backHomeButton}>
-                            <svg className={styles.iconoFlechaArriba} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="39px" height="39px">
-                                <title>Flecha hacia arriba</title>
-                                <circle className={styles.circulo} cx="12" cy="12" r="12"/>
-                                <path className={styles.flecha} d="M7 14 l5-5 5 5" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-                            </svg>
-                        </Link>
-                    </div>
-                </header>
-        
-                <div className={styles.diagramContainer}>
-                    <Image src={item.img} alt={`${item.name} diagram`} width={500} height={290} />
-                </div>
-        
-                <ul className={styles.exerciseList}>
-                    {item.exercise.map((exerciseItem, index) => {
-                        return (
-                            <li key={`${exerciseItem.url}-${index}`} 
-                            className={styles.exerciseItem}
-                            >
-                                <Link href={exerciseItem.video}>
-                                    <div className={styles.exerciseContent}>
-                                        <div className={styles.exerciseInfo}>
-                                            <span 
-                                                className={`${styles.exerciseName} ${styles[getTextSizeClass(exerciseItem.name)]}`}
-                                                title={exerciseItem.name}
-                                            >
-                                                {exerciseItem.name}
-                                            </span>
-                                        </div>
-                                        <div className={styles.intensityLevel}>
-                                            {Array.from({ length: getDifficultyLevel(exerciseItem.difficulty) }).map((_, i) => (
-                                                <LightningIcon key={i} />
-                                            ))}
-                                        </div>
-                                    </div>
-                                </Link>
-                            </li>
-                        );
-                    })}
-                </ul>
+      <div className={styles.exercisePage} style={backgroundStyle}>
+        <div className={styles.cardContentWrapper}>
+          <header className={styles.cardHeader}>
+            <div className={styles.headerTitle}>
+              <Image
+                src={item.icon}
+                alt={`${item.name} icon`}
+                width={50}
+                height={50}
+              />
+              <h2>{item.name}</h2>
+              <Link href={`/articulaciones`} className={styles.backHomeButton}>
+                <svg
+                  className={styles.iconoFlechaArriba}
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  width="39px"
+                  height="39px"
+                >
+                  <title>Flecha hacia arriba</title>
+                  <circle className={styles.circulo} cx="12" cy="12" r="12" />
+                  <path
+                    className={styles.flecha}
+                    d="M7 14 l5-5 5 5"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    fill="none"
+                  />
+                </svg>
+              </Link>
             </div>
+          </header>
+
+          <div className={styles.diagramContainer}>
+            <Image
+              src={item.img}
+              alt={`${item.name} diagram`}
+              fill
+              style={{ objectFit: "contain" }}
+            />
+          </div>
+
+          <div className={styles.contenedorItems}>
+            
+            
+                
+               <div className={styles.contenedorAuxiliar}>
+               
+                <span className={styles.title}>Tus Ejercicios</span>
+                     <div className={styles.contenedorDificultad}>
+                        <LightningIcon />
+                        <span style={{    color: "grey"}}>Dificultad</span>
+                    </div>
+
+                </div>
+              
+
+          
+            
+
+            <ul className={styles.exerciseList}>
+              {item.exercise.map((exerciseItem, index) => {
+                return (
+                  <li
+                    key={`${exerciseItem.url}-${index}`}
+                    className={styles.exerciseItem}
+                  >
+                    <Link href={exerciseItem.video}>
+                      <div className={styles.exerciseContent}>
+                        <div className={styles.exerciseInfo}>
+                          <span
+                            className={`${styles.exerciseName} ${
+                              styles[getTextSizeClass(exerciseItem.name)]
+                            }`}
+                            title={exerciseItem.name}
+                          >
+                            {exerciseItem.name}
+                          </span>
+                        </div>
+                        <div className={styles.intensityLevel}>
+                          {Array.from({
+                            length: getDifficultyLevel(exerciseItem.difficulty),
+                          }).map((_, i) => (
+                            <LightningIcon key={i} />
+                          ))}
+                        </div>
+                      </div>
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
         </div>
+      </div>
     );
         
         

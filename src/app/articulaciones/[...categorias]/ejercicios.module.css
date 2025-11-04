@@ -61,6 +61,10 @@
     justify-content: center;
     padding: 2.5rem 0;
     height: 280px;
+    width: 300px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
   }
   
 
@@ -246,7 +250,59 @@
     stroke-width: 1.5;
     fill: none;
   }
+
+  .contenedorItems{
+    display: flex;
+    flex-direction: column;
+   
+  }
+
+  .title{
+    color: grey;
+    margin-right: auto;
+    margin-left: 14px;
+    
+    
+ 
+
+
+  }
+
+ .contenedorAuxiliar{
+
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 20px;
+ justify-content: space-between;
+  align-items: center;
+
   
+   
+   
+    
+  }
+  .contenedorDificultad{
+
+    display: flex;
+    border-radius: 50px;
+    border: 1px solid    grey;
+    width: 95px;
+    justify-content:flex-start;
+    align-items: center;
+    margin-right: 14px;
+    height: 30px;
+    padding-left: 3px;
+    padding-right: 3px;
+ 
+
+ 
+   
+  }
+
+  
+
+  
+
   /* ==============================================
      RESPONSIVE - TABLET
      ============================================== */
@@ -254,7 +310,7 @@
     .exerciseList {
       padding: 0 1rem;
       gap: 0.75rem;
-      margin-top: 70px;
+     
      
     }
     
@@ -335,14 +391,17 @@
     }
     
     .diagramContainer {
-      height: 220px;
+      height: 100px;
       padding: 1.5rem 0;
 
     }
-    .diagramContainer img{
-      
-      width: 300px;
-    }
 
+    .title{
+
+    padding: auto;
+    }
+   
+
+   
 
   }
