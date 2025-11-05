@@ -20,7 +20,7 @@ export default async function categorias(props: categoriasProps) {
     const categoryId = (categorias[0]); 
     
     const item: PainType | undefined = data.find((d) => d.name === categoryId);
-    
+    const showItems = item?.exercise.slice(0,3);
 
 
     const LightningIcon = () => (
@@ -128,7 +128,7 @@ export default async function categorias(props: categoriasProps) {
             
 
             <ul className={styles.exerciseList}>
-              {item.exercise.map((exerciseItem, index) => {
+              {showItems?.map((exerciseItem, index) => {
                 return (
                   <li
                     key={`${exerciseItem.url}-${index}`}
