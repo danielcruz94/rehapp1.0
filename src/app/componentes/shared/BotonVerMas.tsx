@@ -2,7 +2,7 @@
 
 export default function BotonVerMas({ className }: { className?: string }) {
   const handleClick = () => {
-    alert("Ver más ejercicios");
+    alert("Estamos actualizando tus ejercicios,esto tomará solo un momento.");
   };
 
   return (
