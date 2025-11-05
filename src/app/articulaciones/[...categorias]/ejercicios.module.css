@@ -327,6 +327,8 @@ body {
     border: 1px solid #f8fafc;
     border-radius: 15px;
     margin-top: 20px;
+    background-color: gray;
+    color: whitesmoke;
 
   }
 
