@@ -4,6 +4,7 @@ import Image from "next/image";
 
 import { data, type PainType } from "../../../../data";
 
+import BotonVerMas from "./../../componentes/shared/BotonVerMas";
 interface categoriasProps {
     params: {
         categorias: string[]
@@ -15,12 +16,15 @@ export default async function categorias(props: categoriasProps) {
    
     const { categorias } = await props.params; 
 
-   
+
+
+
 
     const categoryId = (categorias[0]); 
     
     const item: PainType | undefined = data.find((d) => d.name === categoryId);
-    const showItems = item?.exercise.slice(0,3);
+   
+    const showItems = item?.exercise.slice(0,4);
 
 
     const LightningIcon = () => (
@@ -65,6 +69,14 @@ export default async function categorias(props: categoriasProps) {
         return 'text-normal';
     };
   
+    const getMoreExercises = ()=>{
+     alert("Ver más ejercicios");
+
+    }
+
+
+
+
     return (
       <div className={styles.exercisePage} style={backgroundStyle}>
         <div className={styles.cardContentWrapper}>
@@ -159,6 +171,10 @@ export default async function categorias(props: categoriasProps) {
                 );
               })}
             </ul>
+            <div>
+            <BotonVerMas className={styles.botonVerMas} />
+
+            </div>
           </div>
         </div>
       </div>
