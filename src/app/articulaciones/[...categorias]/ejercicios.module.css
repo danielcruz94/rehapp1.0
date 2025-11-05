@@ -13,6 +13,7 @@ body {
   width: 100%;
   box-sizing: border-box;
   color-scheme: dark; 
+  
 }
 .exercisePage {
     width: 100%;
@@ -435,6 +436,12 @@ body {
       padding: 0.75rem 0.875rem;
       min-height: 30px;
 
+    }
+
+    body{
+      overflow: hidden;     /* Sin scroll horizontal ni vertical */
+      height: 100%;
+      width: 100%;
     }
 
    
