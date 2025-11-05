@@ -6,7 +6,7 @@ export default function BotonVerMas({ className }: { className?: string }) {
   };
 
   return (
-    <button className={className} onClick={handleClick}>
+    <button className={className} style={{color: "grey",backgroundColor: "rgb(107, 107, 107)"}} onClick={handleClick}>
       Ver más Ejercicios
     </button>
   );
