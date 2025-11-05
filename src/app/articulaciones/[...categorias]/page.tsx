@@ -2,9 +2,10 @@ import Link from "next/link";
 import styles from "./ejercicios.module.css";
 import Image from "next/image";
 
+import ListaEjercicios from "./../../componentes/shared/ListaEjercicios";
+
 import { data, type PainType } from "../../../../data";
 
-import BotonVerMas from "./../../componentes/shared/BotonVerMas";
 interface categoriasProps {
     params: {
         categorias: string[]
@@ -23,8 +24,7 @@ export default async function categorias(props: categoriasProps) {
     const categoryId = (categorias[0]); 
     
     const item: PainType | undefined = data.find((d) => d.name === categoryId);
-   
-    const showItems = item?.exercise.slice(0,4);
+    const showItems = item!.exercise;
 
 
     const LightningIcon = () => (
@@ -69,10 +69,7 @@ export default async function categorias(props: categoriasProps) {
         return 'text-normal';
     };
   
-    const getMoreExercises = ()=>{
-     alert("Ver más ejercicios");
-
-    }
+  
 
 
 
@@ -135,46 +132,12 @@ export default async function categorias(props: categoriasProps) {
 
                 </div>
               
-
+                <ListaEjercicios exercises={showItems} />
           
             
 
-            <ul className={styles.exerciseList}>
-              {showItems?.map((exerciseItem, index) => {
-                return (
-                  <li
-                    key={`${exerciseItem.url}-${index}`}
-                    className={styles.exerciseItem}
-                  >
-                    <Link href={exerciseItem.video}>
-                      <div className={styles.exerciseContent}>
-                        <div className={styles.exerciseInfo}>
-                          <span
-                            className={`${styles.exerciseName} ${
-                              styles[getTextSizeClass(exerciseItem.name)]
-                            }`}
-                            title={exerciseItem.name}
-                          >
-                            {exerciseItem.name}
-                          </span>
-                        </div>
-                        <div className={styles.intensityLevel}>
-                          {Array.from({
-                            length: getDifficultyLevel(exerciseItem.difficulty),
-                          }).map((_, i) => (
-                            <LightningIcon key={i} />
-                          ))}
-                        </div>
-                      </div>
-                    </Link>
-                  </li>
-                );
-              })}
-            </ul>
-            <div>
-            <BotonVerMas className={styles.botonVerMas} />
-
-            </div>
+           
+           
           </div>
         </div>
       </div>

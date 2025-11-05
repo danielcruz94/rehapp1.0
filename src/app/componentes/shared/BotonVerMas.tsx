@@ -1,13 +1,22 @@
-"use client";
+export default function BotonVerMas({
+  className,
+  onClick,
+}: {
+  className?: string;
+  onClick?: () => void;
+}) {
 
-export default function BotonVerMas({ className }: { className?: string }) {
   const handleClick = () => {
-    alert("Estamos actualizando tus ejercicios,esto tomará solo un momento.");
+
+   
+
+    // ✅ Después ejecuta lo que envió ListaEjercicios (handleVerMas)
+    if (onClick) onClick();
   };
 
   return (
-    <button className={className}  onClick={handleClick}>
-      Ver más Ejercicios
+    <button className={className} onClick={handleClick}>
+      Ver más
     </button>
   );
 }
