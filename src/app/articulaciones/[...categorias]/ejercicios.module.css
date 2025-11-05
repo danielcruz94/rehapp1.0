@@ -1,6 +1,20 @@
 
-
-
+body {
+  background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.85) 100%);
+  overscroll-behavior: none; 
+  margin: 0;
+  color: #ffffff; 
+  font-family: 'Poppins', sans-serif; 
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+  color-scheme: dark; 
+  
+}
 .exercisePage {
     width: 100%;
     height: 100%;
@@ -426,11 +440,7 @@
 
     }
 
-    body{
-      overflow: hidden;     /* Sin scroll horizontal ni vertical */
-      height: 100%;
-      width: 100%;
-    }
+    
 
    
 
