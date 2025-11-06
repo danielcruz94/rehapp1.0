@@ -4,8 +4,10 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import BotonVerMas from "./BotonVerMas";
-import styles from "./datosModificados.module.css";
+import styles from "./ListaEjercicios.module.css";
 import Toast from "./Toast";
+
+import { usePathname } from "next/navigation";
 
 
 
@@ -21,11 +23,20 @@ export default function ListaEjercicios({
     const [sliceIndex, setSliceIndex] = useState<number>(0);
     const [toastVisible, setToastVisible] = useState(false);
 
+    const pathname = usePathname();
+
     useEffect(() => {
         const savedIndex = sessionStorage.getItem("exerciseSliceIndex");
         if (savedIndex) setSliceIndex(Number(savedIndex));
     }, []);
 
+    useEffect(() => {
+      if (pathname === "/articulaciones") {
+        sessionStorage.removeItem("exerciseSliceIndex");
+        setSliceIndex(0);
+      }
+    }, [pathname]);
+    
     useEffect(() => {
         sessionStorage.setItem("exerciseSliceIndex", String(sliceIndex));
     }, [sliceIndex]);

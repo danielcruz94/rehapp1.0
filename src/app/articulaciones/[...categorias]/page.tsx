@@ -5,6 +5,9 @@ import Image from "next/image";
 import ListaEjercicios from "./../../componentes/shared/ListaEjercicios";
 
 import { data, type PainType } from "../../../../data";
+import BackButton from "../../componentes/shared/BackButton";
+
+
 
 interface categoriasProps {
     params: {
@@ -86,26 +89,8 @@ export default async function categorias(props: categoriasProps) {
                 height={50}
               />
               <h2>{item.name}</h2>
-              <Link href={`/articulaciones`} className={styles.backHomeButton}>
-                <svg
-                  className={styles.iconoFlechaArriba}
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  width="39px"
-                  height="39px"
-                >
-                  <title>Flecha hacia arriba</title>
-                  <circle className={styles.circulo} cx="12" cy="12" r="12" />
-                  <path
-                    className={styles.flecha}
-                    d="M7 14 l5-5 5 5"
-                    strokeWidth="2.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    fill="none"
-                  />
-                </svg>
-              </Link>
+
+              <BackButton className={styles.backHomeButton} />
             </div>
           </header>
 
@@ -127,7 +112,7 @@ export default async function categorias(props: categoriasProps) {
                 <span className={styles.title}>Tus Ejercicios</span>
                      <div className={styles.contenedorDificultad}>
                         <LightningIcon/>
-                        <span style={{    color: "grey"}}>Dificultad</span>
+                        <span style={{ color: "grey"}}>Dificultad</span>
                     </div>
 
                 </div>
