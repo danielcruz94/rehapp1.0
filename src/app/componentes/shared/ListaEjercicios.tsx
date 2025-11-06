@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import BotonVerMas from "./BotonVerMas";
-import styles from "./datosModificados.module.css";
+import styles from "./ListaEjercicios.module.css";
 import Toast from "./Toast";
 
 import { usePathname } from "next/navigation";

@@ -1,0 +1,40 @@
+/* Mantiene la misma posición que el botón anterior */
+.backHomeButton {
+    margin-left: auto;
+    margin-right: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .backHomeButton svg {
+    width: 39px;
+    height: 39px;
+  }
+  
+  /* Nuevo icono Home */
+  .iconoHome {
+    cursor: pointer;
+    transition: transform .2s ease, filter .3s ease;
+  }
+  
+
+  
+  
+  /* Líneas blancas del icono */
+  .flecha {
+    stroke: #ffffff;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+  }
+  
+ 
+  
+  .backHomeButton:hover .flecha {
+    transform: translateY(-2px);
+    transition: 0.2s ease-in-out;
+  }
+  
