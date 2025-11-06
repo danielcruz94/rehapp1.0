@@ -1,13 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-
 import Script from "next/script"; // 👈 Importa Script de Next.js
-
-
-
-
-
-
 
 
 const geistSans = Geist({
@@ -22,10 +15,10 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "rehApp",
-  description: "Fisioterapia a tu alcance", 
+  description: "Fisioterapia a tu alcance",
   other: {
-    'color-scheme': 'dark', // Sugiere al navegador un esquema de color oscuro
-    'theme-color': '#000000', // Define el color del tema para la barra de estado y otros elementos de UI
+    "color-scheme": "dark",
+    "theme-color": "#000000",
   },
 };
 
