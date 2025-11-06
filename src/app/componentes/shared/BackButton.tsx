@@ -10,7 +10,7 @@ export default function BackButton({ className }: { className?: string }) {
   };
 
   return (
-    <Link href="/articulaciones" className={styles.backHomeButton}>
+    <Link href="/articulaciones" className={styles.backHomeButton} onClick={handleClick}>
     <svg
       className={styles.iconoHome}
       xmlns="http://www.w3.org/2000/svg"
